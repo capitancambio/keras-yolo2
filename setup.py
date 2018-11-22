@@ -19,11 +19,17 @@ setup(
     include_package_data=True,
     zip_safe=False,
     description='Yolo2 implementation in keras',
-    author='Javier Asensio-Cubero (based on https://github.com/experiencor/keras-yolo2)',
+    author='Javier Asensio-Cubero '
+           '(based on https://github.com/experiencor/keras-yolo2)',
     author_email='capitan.cambio@gmail.com',
     license='MIT',
     long_description='https://github.com/capitancambio/keras-yolo2',
     install_requires=install_requires,
+    entry_points={
+        'console_scripts': ['gen-anchors=kerolo2.gen_anchors:main',
+                            'train=kerolo2.train:main',
+                            'predict=kerolo2.predict:main'],
+    },
     classifiers=[
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
